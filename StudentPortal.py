@@ -5,11 +5,11 @@ from selenium.common.exceptions import NoAlertPresentException
 
 class StudentPortal:
     def __init__(self, headless=True):
-        self.firefox_options = webdriver.FirefoxOptions()
+        self.chrome_options = webdriver.ChromeOptions()
         if headless:
-            self.firefox_options.add_argument("--headless")
+            self.chrome_options.add_argument("--headless")
     def __make_driver(self):
-        self.driver = webdriver.Firefox(options=self.firefox_options)
+        self.driver = webdriver.Chrome(options=self.chrome_options)
 
     def __refresh(self):
         self.driver.refresh()
